@@ -22,6 +22,6 @@ public class BasicMovement : MonoBehaviour {
         animator.SetFloat("Vertical", _movement.y);
         animator.SetFloat("Magnitude", _movement.magnitude);
 
-        rigidbody2D.velocity = _movement * 500.0f * Time.deltaTime;
+        rigidbody2D.velocity = _movement * 100.0f * Time.deltaTime;
     }
 }

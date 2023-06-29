@@ -378,7 +378,8 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/Camera/CameraMovement.cs"
 "Assets/Scripts/Movement/BasicMovement.cs"
-"Assets/Scripts/Movement/NPCManager.cs"
+"Assets/Scripts/Movement/NPCMovement.cs"
+"Assets/Scripts/System/NPCManager.cs"
 -langversion:9.0
 
 /deterministic
