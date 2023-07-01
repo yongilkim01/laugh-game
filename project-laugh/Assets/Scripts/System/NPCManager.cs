@@ -4,27 +4,40 @@ using UnityEngine;
 
 public class NPCManager : MonoBehaviour
 {
-    [Header("NPC Create status")]
+    private GameEnv gameEnv;
+
+    [Header("NPC create status")]
     public int npcCount;
-    // Start is called before the first frame update
+    public float minX = -10.0f;
+    public float maxX = 12.0f;
+    public float minY = -5.0f;
+    public float maxY = 8.0f;
+
+    [Header("NPC object")]
+    public GameObject npcObj;
+    private void Awake() {
+        gameEnv = FindObjectOfType<GameEnv>();
+    }
     void Start()
     {
-        
+        InitStatus();
+        InitObject();
+        GenerateNPC();
     }
-
-    // Update is called once per frame
     void Update()
     {
         
     }
-
     private void InitStatus() {
-        npcCount = 20;
+        npcCount = gameEnv.npcCount;
     }
-
-    private void InitNPC() {
+    private void InitObject() {
+        npcObj = Resources.Load<GameObject>("Prefabs/Npc/Npc");
+    }
+    private void GenerateNPC() {
         for(int i = 0; i < npcCount; i++) {
-            InitStatus();
+            Vector3 _npcPosition = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), 0.0f);
+            Instantiate(npcObj, _npcPosition, Quaternion.identity);
         }
     }
 }
